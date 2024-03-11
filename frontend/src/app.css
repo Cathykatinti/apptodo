@@ -1,0 +1,29 @@
+.todo-list{
+  display: block;
+  padding: 5px;
+
+}
+.list-item{
+  list-style: none;
+}
+.list-row{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 50%;
+  gap: 0.5rem;
+
+}
+
+  
+.todo-input{
+  align-items: center;
+  margin-left: 50%;
+  max-width: 1000px;
+  gap: 0.5rem;
+}
+.app-bar{
+  align-items: center;
+  margin-left: 50%;
+  max-width: 1000px;
+}
