@@ -1,26 +1,39 @@
+import React from "react";
 import { FaEdit } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
-import React from "react"
 
-const ToDo = ({text,updateMode,deleteToDo}) => {
-  //console.log(text)
+const ToDo = ({
+  text,
+  updateMode,
+  deleteToDo,
+  isChecked,
+  handleCheckboxChange,
+}) => {
+  return (
+    <>
+      <div className="todo-list">
+        <div className="list-row">
+          <div className="first_items">
+            <input
+              type="checkbox"
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+            />
+            <p className="todo-text">{text}</p>
+          </div>
+          <div className="icons">
+            <FaEdit className="icon edit-icon" onClick={updateMode} />
+            <span className="edit-text">Edit</span>
+            <MdOutlineDelete
+              className="icon delete-icon"
+              onClick={deleteToDo}
+            />
+            <span className="delete-text">Delete</span>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-    return ( 
-       <>
-       <div className="todo-list">
-            <ul>
-              <li className="list-item">
-                <div className="list-row">
-                    <input type='checkbox'/>
-                    {text}
-                    <FaEdit className='icon' onClick={updateMode}/>
-                    <MdOutlineDelete className='icon'onClick={deleteToDo}/>
-                </div>
-              </li>
-            </ul>
-       </div>
-       </>
-     );
-}
- 
 export default ToDo;
